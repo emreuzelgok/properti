@@ -9,30 +9,36 @@ type ResultTableProps = {
 
 const ResultTable: FC<ResultTableProps> = ({ numbers,  total }) => {
   const finalNumbers = useMemo(() => {
-    return numbers.filter(item => !!item.number)
+    return numbers.filter(item => !!item.number);
   }, [numbers]);
 
   return (
-    <table className={styles.table}>
-      <tr>
-        <th>Roman Numeral</th>
-        <th>=</th>
-        <th>Latin Number</th>
-      </tr>
-      {finalNumbers.filter(item => !!item.number).map((item)=> (
+    <table className={styles.table} data-test-id="result-table">
+      <thead>
         <tr>
-          <td><strong>{item.key}</strong></td>
-          <td><center>=</center></td>
-          <td>{item.number}</td>
+          <th>Roman Numeral</th>
+          <th>=</th>
+          <th>Latin Number</th>
         </tr>
-      ))}
-      {!!total && (
-        <tr>
-          <th><strong>Total</strong></th>
-          <th><center>=</center></th>
-          <th><strong>{total}</strong></th>
-        </tr>
-      )}
+      </thead>
+      <tbody>
+        {finalNumbers.map((item)=> (
+          <tr key={item.key}>
+            <td><strong>{item.key}</strong></td>
+            <td><center>=</center></td>
+            <td>{item.number}</td>
+          </tr>
+        ))}
+      </tbody>
+      <tfoot>
+        {!!total && (
+          <tr>
+            <th><strong>Total</strong></th>
+            <th><center>=</center></th>
+            <th><strong>{total}</strong></th>
+          </tr>
+        )}
+      </tfoot>
     </table>
   );
 };
