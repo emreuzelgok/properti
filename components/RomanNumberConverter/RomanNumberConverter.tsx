@@ -11,7 +11,7 @@ const RomanNumberConverter = () => {
         <input className={styles.input} placeholder="Type Roman Numerals" />
       </div>
       <div>
-        {/* Result table should be there */}
+        {!!total && <ResultTable total={total} numbers={[]} />}
       </div>
     </div>
   );
