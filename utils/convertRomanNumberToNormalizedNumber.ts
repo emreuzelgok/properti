@@ -1,9 +1,9 @@
 import findRomanNumberFromText, { TNumberObject } from './findRomanNumberFromText';
-import ROMAN_NUMBERS_MAP from 'utils/romanNumbers';
+import ROMAN_NUMBERS_MAP from './romanNumbers';
 
 const { thousands, hundreds, tens, units } = ROMAN_NUMBERS_MAP;
 
-type TConvertedNumberResult = {
+export type TConvertedNumberResult = {
   total: number;
   numbers: TNumberObject[];
 }
