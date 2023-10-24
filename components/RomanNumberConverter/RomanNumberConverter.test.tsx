@@ -34,6 +34,6 @@ it('RomanNumberConverter should have result-table when typed correct Roman Numer
   render(<RomanNumberConverter />);
   const input = screen.getByTestId('converter-input');
   fireEvent.change(input, { target: { value: 'xii' } });
-  const resultTable = screen.getByTestId('converter-input');
+  const resultTable = screen.getByTestId('result-table');
   expect(resultTable).toBeInTheDocument();
 });
