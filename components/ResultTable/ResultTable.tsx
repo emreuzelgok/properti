@@ -13,7 +13,7 @@ const ResultTable: FC<ResultTableProps> = ({ numbers,  total }) => {
   }, [numbers]);
 
   return (
-    <table className={styles.table} data-test-id="result-table">
+    <table className={styles.table} data-testid="result-table">
       <thead>
         <tr>
           <th>Roman Numeral</th>
